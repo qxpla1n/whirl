@@ -65,7 +65,10 @@
 						</span>
 					</a>
 
-					<nav class="header__menu">
+					<nav
+						class="header__menu"
+						id="main-menu"
+					>
 						<ul class="header__list">
 							<li class="header__item">
 								<a
@@ -121,7 +124,8 @@
 						<button
 							class="header__burger burger-btn"
 							type="button"
-							aria-label="Open menu"
+							aria-controls="main-menu"
+							aria-label="Open navigation menu"
 							aria-expanded="false"
 						>
 							<span class="burger-btn__line"></span>
@@ -249,9 +253,7 @@
 						>
 							Benefits
 						</h2>
-						<ul
-							class="benefits__list"
-						>
+						<ul class="benefits__list">
 							<li class="benefits__item">
 								<article class="benefits__card card card-benefits bg-yellow">
 									<svg
