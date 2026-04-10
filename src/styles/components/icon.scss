@@ -1,0 +1,30 @@
+@use '@/styles/helpers' as *;
+
+.icon {
+	@include square(20px);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	fill: currentColor;
+
+	&--social {
+		@include square(23px);
+	}
+
+	&--arrow {
+		width: 10px;
+		height: 15px;
+		fill: none;
+		stroke: var(--color-accent);
+	}
+
+	&--card {
+		@include square(fluid(40, 30));
+	}
+
+	&--stroke {
+		stroke: #006b99;
+		fill: transparent;
+	}
+}

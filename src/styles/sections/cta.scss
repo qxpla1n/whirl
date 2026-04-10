@@ -1,0 +1,38 @@
+@use '@/styles/helpers' as *;
+
+.cta {
+	// .cta__wrapper
+	&__wrapper {
+		padding: fluid(60, 15);
+		background-color: #e6f7ff;
+	}
+
+	// .cta__content
+	&__content {
+		max-width: 500px;
+	}
+	// .cta__title
+	&__title {
+		line-height: 1.2;
+
+		&:not(:last-child) {
+			margin-bottom: 18px;
+		}
+	}
+	// .cta__text
+	&__text {
+		font-size: fluid(18, 16);
+		line-height: 1.5;
+
+		&:not(:last-child) {
+			margin-bottom: fluid(36, 20);
+		}
+	}
+	// .cta__btn
+	&__btn {
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+}

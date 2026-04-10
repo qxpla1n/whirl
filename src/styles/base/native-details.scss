@@ -1,0 +1,17 @@
+@supports (interpolate-size: allow-keywords) {
+	:root {
+		interpolate-size: allow-keywords;
+	}
+}
+
+::details-content {
+	height: 0;
+	overflow: hidden;
+	transition:
+		height var(--transition-duration) ease,
+		content-visibility var(--transition-duration) ease allow-discrete;
+}
+
+[open]::details-content {
+	height: auto;
+}

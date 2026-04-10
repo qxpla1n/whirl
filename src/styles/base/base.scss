@@ -1,0 +1,48 @@
+@use '@/styles/helpers' as *;
+
+html {
+	scroll-behavior: smooth;
+}
+
+html.is-lock {
+	overflow: hidden;
+}
+
+body {
+	font-family: var(--font-family);
+	font-size: 16px;
+	font-weight: 400;
+	letter-spacing: 0.2px;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+}
+
+.wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow: clip;
+}
+
+.page {
+	flex-grow: 1;
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+	transition-duration: var(--transition-duration);
+}
+
+a,
+button {
+	-webkit-tap-highlight-color: transparent;
+}
+
+:focus-visible {
+	@include focus-visible;
+}

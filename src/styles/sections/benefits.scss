@@ -1,0 +1,16 @@
+@use '@/styles/helpers' as *;
+
+.benefits {
+
+	// .benefits__list
+	&__list {
+		@include grid-cards;
+		// display: grid;
+		// grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+		gap: fluid(32, 15, null, 768);
+	}
+	// .benefits__item
+	&__item {
+		display: flex;
+	}
+}

@@ -1,0 +1,92 @@
+@use '@/styles/helpers' as *;
+
+.promo {
+	position: relative;
+	line-height: 1.5;
+	color: white;
+	background-color: var(--color-accent);
+	overflow: hidden;
+
+	// .promo__container
+	&__container {
+		min-width: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 30px;
+
+		@include tablet {
+			flex-direction: column-reverse;
+			align-items: flex-start;
+		}
+	}
+	// .promo__media
+	&__media {
+		width: fluid(382, 260);
+		max-width: 100%;
+		aspect-ratio: 1;
+
+		@include tablet {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			opacity: 0.3;
+		}
+	}
+	// .promo__img
+	&__img {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+	// .promo__content
+	&__content {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		row-gap: 20px;
+		z-index: 1;
+
+		@include tablet-above {
+			max-width: fluid(500, 400, null, 769);
+		}
+
+		@include tablet {
+			padding: fluid(20, 15);
+
+			&::after {
+				position: absolute;
+				content: '';
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.5);
+				z-index: -1;
+				border-radius: 10px;
+				backdrop-filter: blur(2px);
+			}
+		}
+	}
+
+	// .promo__text
+	&__text {
+		p {
+			font-size: fluid(18, 16);
+		}
+	}
+
+	// .promo__btn
+	&__btn {
+		color: var(--color-accent);
+		border-color: var(--color-white);
+		&::after {
+			background-color: var(--color-white);
+		}
+
+		@include hover(false) {
+			color: var(--color-white);
+		}
+	}
+}

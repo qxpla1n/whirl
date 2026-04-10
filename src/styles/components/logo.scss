@@ -1,0 +1,29 @@
+@use '@/styles/helpers' as *;
+
+.logo {
+	display: flex;
+	align-items: center;
+	column-gap: 7px;
+	line-height: 1;
+
+	&--large {
+		.logo__img {
+			@include square(fluid(40, 35, null, 425));
+		}
+
+		.logo__text {
+			font-size: fluid(32, 26, null, 425);
+		}
+	}
+
+	&__img {
+		@include square(35px);
+	}
+
+	&__text {
+		font-size: 26px;
+		font-weight: 600;
+		color: var(--color-logo);
+		transition: color var(--transition-duration);
+	}
+}

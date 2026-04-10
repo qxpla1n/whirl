@@ -1,0 +1,7 @@
+@use '@/styles/helpers' as *;
+
+[class*='__container'] {
+	max-width: calc($maxWidthContainer + $containerPaddingX * 2);
+	margin-inline: auto;
+	padding-inline: $containerPaddingX;
+}

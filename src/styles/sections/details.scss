@@ -1,0 +1,44 @@
+@use '@/styles/helpers' as *;
+
+.details {
+	// .details__container
+	&__container {
+		display: flex;
+		flex-direction: column;
+		row-gap: fluid(60, 30);
+	}
+	// .details__title
+	&__title {
+		max-width: 610px;
+	}
+	// .details__inner
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 30px;
+	}
+	// .details__accordion
+	&__accordion {
+		max-width: fluid(450, 380, null, 769);
+		width: 100%;
+
+		@include tablet {
+			max-width: none;
+		}
+	}
+	// .details__picture
+	&__picture {
+		width: 455px;
+		max-width: 100%;
+		aspect-ratio: 455 / 255;
+		background-image: url('@/assets/images/details/details-bg.svg');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+		@include tablet {
+			display: none;
+		}
+	}
+}

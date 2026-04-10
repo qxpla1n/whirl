@@ -1,0 +1,17 @@
+@use '@/styles/helpers' as *;
+
+.card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+
+	box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+	transition:
+		transform var(--transition-duration),
+		box-shadow var(--transition-duration);
+
+	@include hover(false) {
+		transform: translateY(-5px);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+	}
+}

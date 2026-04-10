@@ -1,0 +1,15 @@
+@use '@/styles/helpers' as *;
+
+.base-title {
+	font-family: var(--font-family-second);
+	font-size: fluid(42, 24);
+	line-height: 1.25;
+
+	&--m {
+		font-size: fluid(25, 22);
+	}
+
+	&--s {
+		font-size: 22px;
+	}
+}

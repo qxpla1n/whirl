@@ -1,0 +1,18 @@
+@use '@/styles/helpers' as *;
+
+.card-features {
+	display: flex;
+	flex-direction: column;
+	row-gap: 11px;
+
+	// .card-features__icon
+	&__icon {
+		color: #006b99;
+	}
+	// .card-features__title
+	&__title {
+	}
+	// .card-features__text
+	&__text {
+	}
+}

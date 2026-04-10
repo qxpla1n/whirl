@@ -1,0 +1,58 @@
+@use 'sass:math';
+@use 'constants' as *;
+
+// helper: number → px
+@function _to-px($value) {
+	@if math.unit($value) == '' {
+		@return $value * 1px;
+	}
+	@return $value;
+}
+
+@function fluid($maxSizePx, $minSizePx, $maxViewport: null, $minViewport: null) {
+	// если null — подставляем дефолты из constants
+	@if $maxViewport == null {
+		$maxViewport: $maxWidthContainer;
+	}
+	@if $minViewport == null {
+		$minViewport: $minWidth;
+	}
+
+	// sizes → rem
+	$maxSize: math.div($maxSizePx, 16);
+	$minSize: math.div($minSizePx, 16);
+
+	// normalize viewport values
+	$maxViewportPx: _to-px($maxViewport);
+	$minViewportPx: _to-px($minViewport);
+
+	// viewports → rem
+	$maxViewportRem: math.div(math.div($maxViewportPx, 1px), 16);
+	$minViewportRem: math.div(math.div($minViewportPx, 1px), 16);
+
+	// slope
+	$slope: math.div(($maxSize - $minSize), ($maxViewportRem - $minViewportRem));
+
+	// y = kx + b
+	$yAxisIntersection: -$minViewportRem * $slope + $minSize;
+
+	@return clamp(#{$minSize}rem, #{$yAxisIntersection}rem + #{$slope * 100}vw, #{$maxSize}rem);
+}
+
+//Percent
+@function percent($px, $from: 100) {
+	$result: math.div($px, $from) * 100%;
+	@return $result;
+}
+
+//REM
+@function toRem($px, $current: 16) {
+	$result: math.div($px, $current) + rem;
+	@return $result;
+}
+
+//EM
+@function toEm($px, $current: 16) {
+	$result: math.div($px, $current) + em;
+	@return $result;
+}

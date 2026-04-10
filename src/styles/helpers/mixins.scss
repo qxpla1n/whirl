@@ -1,0 +1,96 @@
+@use 'sass:meta';
+@use 'variables' as *;
+@use 'functions' as *;
+
+// Hide or Show
+@mixin hide {
+	opacity: 0;
+	visibility: hidden;
+}
+
+@mixin show {
+	opacity: 1;
+	visibility: visible;
+}
+
+//Fonts
+@mixin font-face($font-family, $url, $weight, $style) {
+	@font-face {
+		font-family: '#{$font-family}';
+		src: url('/fonts/#{$url}.woff2') format('woff2');
+		font-weight: #{$weight};
+		font-style: $style;
+		font-display: swap;
+	}
+}
+
+@mixin abs-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+}
+
+@mixin abs-x {
+	position: absolute;
+	left: 50%;
+	translate: -50%;
+}
+
+@mixin abs-y {
+	position: absolute;
+	top: 50%;
+	translate: 0 -50%;
+}
+
+@mixin square($size) {
+	width: $size;
+	height: $size;
+}
+
+@mixin visually-hidden {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px !important;
+	border: 0 !important;
+	padding: 0 !important;
+	white-space: nowrap !important;
+	clip-path: inset(100%) !important;
+	clip: rect(0 0 0 0) !important;
+	overflow: hidden !important;
+}
+
+@mixin focus-visible {
+	outline: 2px dashed var(--color-accent);
+	outline-offset: 3px;
+	transition-duration: 0s !important;
+}
+
+@mixin disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+//Hover
+@mixin hover($hasActiveEffectOnMObile: true) {
+	@media (any-hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+
+	@if ($hasActiveEffectOnMObile) {
+		@media (any-hover: none) {
+			&:active {
+				@content;
+			}
+		}
+	}
+}
+
+@mixin grid-cards($min: 270px) {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax($min, 1fr));
+	// gap: fluid(32, 15, null, 768);
+}

@@ -1,0 +1,19 @@
+{
+  "name": "project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@spiriit/vite-plugin-svg-spritemap": "^6.0.0",
+    "postcss-pxtorem": "^6.1.0",
+    "prettier": "^3.8.1",
+    "sass": "^1.97.3",
+    "svgo": "^4.0.1",
+    "vite": "^7.2.4"
+  }
+}

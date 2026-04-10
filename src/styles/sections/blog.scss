@@ -1,0 +1,29 @@
+@use '@/styles/helpers' as *;
+
+.blog {
+	background-color: #f7f9fa;
+
+	// .blog__container
+	&__container {
+		display: flex;
+		flex-direction: column;
+		row-gap: fluid(50, 30, null, 425);
+	}
+	// .blog__header
+	&__header {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 30px;
+		row-gap: 15px;
+	}
+
+	// .blog__list
+	&__list {
+		@include grid-cards;
+		// display: grid;
+		// grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+		gap: fluid(32, 15, null, 768);
+	}
+}

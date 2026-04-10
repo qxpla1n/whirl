@@ -1,0 +1,109 @@
+@use '@/styles/helpers' as *;
+
+// .features {
+// 	line-height: 1.5;
+
+// 	&--split {
+// 		.features__container {
+// 			display: flex;
+// 			justify-content: space-between;
+// 			column-gap: 70px;
+
+// 			@include laptop {
+// 				flex-direction: column;
+// 			}
+
+// 			@include laptop-above {
+// 				.features__title {
+// 					max-width: 300px;
+// 				}
+// 			}
+
+// 			.features__list {
+// 				column-gap: fluid(32, 30, null, 768);
+// 			}
+// 		}
+// 	}
+
+// 	&--grid {
+// 		.features__list {
+// 			column-gap: fluid(64, 30, null, 768);
+// 		}
+// 	}
+
+// 	// .features__container
+// 	&__container {
+// 		display: grid;
+// 		row-gap: fluid(65, 20, null, 425);
+// 	}
+
+// 	&__list {
+// 		display: grid;
+// 		grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+// 		gap: 30px;
+// 	}
+
+// 	&__top {
+// 		display: flex;
+// 		flex-direction: column;
+// 		row-gap: 18px;
+// 	}
+
+// 	// .features__text
+// 	&__text {
+// 		max-width: 650px;
+// 	}
+// }
+
+.features {
+	line-height: 1.5;
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		row-gap: fluid(65, 30, null, 425);
+	}
+
+	&__list {
+		@include grid-cards(230px);
+		// display: grid;
+		// grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+		// gap: 30px;
+	}
+
+	&__top {
+		display: flex;
+		flex-direction: column;
+		row-gap: 18px;
+	}
+
+	&__text {
+		max-width: 650px;
+	}
+
+	// modifiers
+
+	&--split &__container {
+		flex-direction: row;
+		justify-content: space-between;
+		column-gap: 70px;
+
+		@include laptop {
+			flex-direction: column;
+		}
+	}
+
+	&--split &__title {
+		@include laptop-above {
+			max-width: 300px;
+		}
+	}
+
+	&--split &__list {
+		gap: 30px fluid(32, 30, null, 768);
+	}
+
+	&--grid &__list {
+		gap: 30px fluid(64, 30, null, 768);
+	}
+}

@@ -1,0 +1,53 @@
+@use '@/styles/helpers' as *;
+
+.burger-btn {
+	@include tablet-above {
+		display: none;
+	}
+
+	@include tablet {
+		position: relative;
+		width: 30px;
+		height: 20px;
+
+		&__line,
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			height: 3px;
+			width: 100%;
+			background-color: var(--color-accent);
+			border-radius: 3px;
+			transition: all 0.3s;
+		}
+
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		&__line {
+			top: 50%;
+			transform: translateY(-50%) scaleX(1);
+		}
+	}
+
+	[data-menu-open] & {
+		.burger-btn__line {
+			transform: translateY(-50%) scaleX(0);
+		}
+
+		&::before {
+			top: 50%;
+			transform: translateY(-50%) rotate(-45deg);
+		}
+
+		&::after {
+			bottom: 50%;
+			transform: translateY(50%) rotate(45deg);
+		}
+	}
+}

@@ -1,0 +1,28 @@
+@use '@/styles/helpers' as *;
+
+.link-accent {
+	position: relative;
+	color: var(--color-accent);
+	line-height: 1.6;
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 2px;
+		background-color: var(--color-accent);
+		transition-duration: var(--transition-duration);
+	}
+
+	@include hover(false) {
+		&::after {
+			width: 100%;
+		}
+	}
+
+	&:active {
+		color: var(--color-text);
+	}
+}

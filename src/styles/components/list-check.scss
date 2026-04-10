@@ -1,0 +1,44 @@
+@use '@/styles/helpers' as *;
+
+.list-check {
+	--icon-color: currentColor;
+
+	display: flex;
+	flex-direction: column;
+	row-gap: 12px;
+
+	&--inline {
+		flex-direction: row;
+		flex-wrap: wrap;
+		column-gap: 32px;
+		row-gap: 15px;
+		color: var(--color-link-footer);
+	}
+
+	&--small {
+		.list-check__item::before {
+			@include square(13px);
+		}
+	}
+
+	&--pink {
+		--icon-color: var(--color-bg-pink);
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		column-gap: 8px;
+
+		&::before {
+			@include square(16px);
+
+			content: '';
+			flex-shrink: 0;
+
+			background-color: var(--icon-color);
+			mask: url('@/assets/icons/check.svg') no-repeat center / contain;
+			-webkit-mask: url('@/assets/icons/check.svg') no-repeat center / contain;
+		}
+	}
+}

@@ -1,0 +1,28 @@
+:root {
+	// Colors
+	--color-black: #000000;
+	--color-white: #ffffff;
+	--color-accent: #0070a0;
+	--color-text: #1f1f1f;
+	--color-logo: #2d2d2d;
+	--color-link-header: #33383f;
+	--color-link-footer: #626a72;
+	--color-bg: #ffffff;
+	--color-bg-header-scroll: rgba(0, 0, 0, 0.8);
+	--color-bg-yellow: #faea73;
+	--color-bg-blue: #cceff6;
+	--color-bg-pink: #f7cedc;
+
+	// Header height
+	--header-height: 76px;
+
+	// Fonts
+	--font-family: 'Inter', sans-serif;
+	--font-family-second: 'Fraunces', serif;
+
+	// Border
+	--border: 1px solid #dee5eb;
+
+	// Transition
+	--transition-duration: 0.3s;
+}

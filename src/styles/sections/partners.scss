@@ -1,0 +1,106 @@
+@use '@/styles/helpers' as *;
+
+.partners {
+
+	// .partners__container
+	&__container {
+		display: flex;
+		flex-direction: column;
+		row-gap: 25px;
+		text-align: center;
+	}
+
+	// .partners__text
+	&__text {
+		font-size: fluid(24, 18);
+		line-height: 1.56;
+	}
+
+	&__scroll {
+		margin-inline: -15px;
+		padding-inline: 15px;
+		overflow-x: auto;
+		scrollbar-width: none;
+		// mask-image: linear-gradient(
+		// 	to right,
+		// 	transparent,
+		// 	black 40px,
+		// 	black calc(100% - 40px),
+		// 	transparent
+		// );
+
+		&--left {
+			-webkit-mask-image: linear-gradient(
+				to right,
+				transparent 0,
+				rgba(0, 0, 0, 0.9) 40px,
+				black 80px
+			);
+			mask-image: linear-gradient(to right, transparent 0, rgba(0, 0, 0, 0.9) 40px, black 80px);
+		}
+
+		&--right {
+			-webkit-mask-image: linear-gradient(
+				to right,
+				black calc(100% - 80px),
+				rgba(0, 0, 0, 0.9) calc(100% - 40px),
+				transparent 100%
+			);
+			mask-image: linear-gradient(
+				to right,
+				black calc(100% - 80px),
+				rgba(0, 0, 0, 0.9) calc(100% - 40px),
+				transparent 100%
+			);
+		}
+
+		&--both {
+			-webkit-mask-image: linear-gradient(
+				to right,
+				transparent 0,
+				rgba(0, 0, 0, 0.9) 40px,
+				black 80px,
+				black calc(100% - 80px),
+				rgba(0, 0, 0, 0.9) calc(100% - 40px),
+				transparent 100%
+			);
+			mask-image: linear-gradient(
+				to right,
+				transparent 0,
+				rgba(0, 0, 0, 0.9) 40px,
+				black 80px,
+				black calc(100% - 80px),
+				rgba(0, 0, 0, 0.9) calc(100% - 40px),
+				transparent 100%
+			);
+		}
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		&:not(.is-overflow) .partners__list {
+			margin-inline: auto;
+		}
+	}
+
+	// .partners__list
+	&__list {
+		display: flex;
+		align-items: center;
+		column-gap: fluid(60, 20);
+		width: max-content;
+	}
+
+	&__item {
+		flex: 0 0 auto;
+	}
+
+	&__logo {
+		display: block;
+		max-width: 159px;
+		max-height: 34px;
+		width: auto;
+		height: auto;
+	}
+}
